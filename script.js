@@ -49,7 +49,8 @@ function changeBackgroundColor() {
         rgbLabel.classList.add('black-text');
         hexLabel.classList.add('black-text');
     }
-    else if (sumOfRgb <= 150) {
+
+    else if (r <= 75 && (r === g && g === b))  {
         rgbLabel.classList.remove('black-text');
         hexLabel.classList.remove('black-text');
         rgbLabel.classList.add('white-text');
