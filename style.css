@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#button {
+    width: 8em;
+    border: none;
+    color: #141414;
+    font-size: 1.15em;
+    font-weight: 400;
+    border: 0.25em solid #494949;
+    letter-spacing: 2px;
+    padding: 0.75em;
+    outline: 0;
+}
+
+#button:hover {
+    background-color: #2b2b2b;
+    border: none;
+    color: white;
+    height: 3.25em;
+}
+
+.white-text {
+    text-align: center;
+    color: white;
+}
+
+.black-text {
+    text-align: center;
+    color: #141414;
+}
+
+/* Added hover on black text to make text readable against a dark background */
+.black-text:hover {
+    background-color: ivory;
+    font-size: larger;
+}
+
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
