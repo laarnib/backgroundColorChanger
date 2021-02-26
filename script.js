@@ -1,5 +1,5 @@
 const container = document.querySelector('#container');
-const button = document.querySelector('#button');
+let button = document.querySelector('.button');
 
 // Create p elements that will display the rgb and hex values of the 
 // generated background color
@@ -40,19 +40,28 @@ function changeBackgroundColor() {
     hexLabel.innerText =  `#${r_hex}${g_hex}${b_hex}`;
 
     /* Change color of labels and background of button 
-       to either white or black based on generated background color */
-    if ((r >= 128 && g >=128 && b >= 128) || (r >= 200 && g >= 220) || (g >= 250 && b >= 180)) {
-        rgbLabel.classList.add("black-text");
-        hexLabel.classList.add("black-text");
-    } 
-    else if (b > 100 && r < 100 && g < 100){
-        console.log("inside else if");
-        rgbLabel.classList.add("white-text");
-        hexLabel.classList.add("white-text");
+    to either white or black based on generated background color */
+    let sumOfRgb = r + g + b;
+    if (sumOfRgb >= 320 && g > 200) {
+        button.classList.remove('button-light-border');
+        rgbLabel.classList.remove('white-text');
+        hexLabel.classList.remove('white-text');
+        rgbLabel.classList.add('black-text');
+        hexLabel.classList.add('black-text');
+    }
+    else if (sumOfRgb <= 150) {
+        rgbLabel.classList.remove('black-text');
+        hexLabel.classList.remove('black-text');
+        rgbLabel.classList.add('white-text');
+        hexLabel.classList.add('white-text');
+        button.classList.add('button-light-border');
     }
     else {
-        rgbLabel.classList.add("white-text");
-        hexLabel.classList.add("white-text");
+        button.classList.remove('button-light-border');
+        rgbLabel.classList.remove('black-text');
+        hexLabel.classList.remove('black-text');
+        rgbLabel.classList.add('white-text');
+        hexLabel.classList.add('white-text');
     }
 }
 
