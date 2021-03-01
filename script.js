@@ -33,7 +33,7 @@ function changeBackgroundColor() {
     let b_hex = convertToHex(b);
     
     // Remove visibility of h1 for a cleaner page
-    document.querySelector('h1').style.visibility = 'hidden';
+    document.querySelector('h1').classList.add('invisible');
 
     // Print color values in rgb and hex format
     rgbLabel.innerText = `rgb(${r},${g},${b})`;
@@ -49,7 +49,6 @@ function changeBackgroundColor() {
         rgbLabel.classList.add('black-text');
         hexLabel.classList.add('black-text');
     }
-
     else if (r <= 75 && (r === g && g === b))  {
         rgbLabel.classList.remove('black-text');
         hexLabel.classList.remove('black-text');
